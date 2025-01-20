@@ -6,7 +6,7 @@ class GoogleAPISpeedTestTool(BaseTool):
     description: str = "Analyzes website performance using Google's SpeedTest API via PageSpeed Insights API."
 
     def _run(self, url: str) -> str:
-        API_KEY = 'AIzaSyD-fY1bZqjdL4B777-1OBx92keae81f5Po'  # Ensure to replace 'YOUR_API_KEY' with your actual Google API key
+        API_KEY = ''  # Ensure to replace 'YOUR_API_KEY' with your actual Google API key
         endpoint = f"https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url={url}&strategy=mobile&key={API_KEY}"
         try:
             # print(f"Requesting URL: {endpoint}")

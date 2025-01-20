@@ -24,7 +24,7 @@ researcher = Agent(
   description='Identify the top 10 links for each keyword, clean their URLs to provide only the main domain, and ensure the URLs start with https:',
   expected_output='A list of the main domains of the top 10 links for each keyword, with URLs starting with https:',
   tools=[SerperDevTool()],
-#   verbose=True,
+   verbose=True,
 )
 
 
@@ -35,7 +35,7 @@ analyzer = Agent(
   description='Analyze the performance of the top 10 links for each keyword using Google API SpeedTest. Add https: to domains if missing, and exclude domains like linkedin.com, choosing the next eligible link instead.',
   expected_output='Performance analysis for the top 10 websites for each keyword, excluding specific domains like linkedin.com.',
   tools=[speed_test_tool],
-#   verbose=True,
+  verbose=True,
 )
 
 reporter = Agent(
@@ -45,7 +45,7 @@ reporter = Agent(
   backstory="As a reporter, my mission is to distill complex data into clear, concise, and actionable insights. With a keen eye for detail and a commitment to accuracy, I sift through the analyses provided by my fellow agents, crafting reports that illuminate the strengths and weaknesses of each website. My work is guided by a dedication to clarity, ensuring that our findings are accessible and informative for all stakeholders.",
   goal='Compile a performance report for the top 10 links of each keyword. name the file (keyword)',
   tools=[MarkdownSaveTool()],
-#   verbose=True,
+  verbose=True,
   # Assuming this agent compiles reports without needing specific tools
 )
 
